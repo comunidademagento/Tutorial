@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+ 
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+    <menu>
+        <add id="Tutorial_SimpleNews::main_menu" title="Simple News" 
+            module="Tutorial_SimpleNews" sortOrder="20" 
+            resource="Tutorial_SimpleNews::simplenews" />
+        <add id="Tutorial_SimpleNews::add_news" title="Add News" 
+            module="Tutorial_SimpleNews" sortOrder="1" parent="Tutorial_SimpleNews::main_menu" 
+            action="simplenews/news/new" resource="Tutorial_SimpleNews::manage_news" />
+        <add id="Tutorial_SimpleNews::manage_news" title="Manage News" 
+            module="Tutorial_SimpleNews" sortOrder="2" parent="Tutorial_SimpleNews::main_menu" 
+            action="simplenews/news/index" resource="Tutorial_SimpleNews::manage_news" />
+        <add id="Tutorial_SimpleNews::configuration" title="Configurations" 
+            module="Tutorial_SimpleNews" sortOrder="3" parent="Tutorial_SimpleNews::main_menu" 
+            action="adminhtml/system_config/edit/section/simplenews" 
+            resource="Tutorial_SimpleNews::configuration" />
+    </menu>
+</config>
